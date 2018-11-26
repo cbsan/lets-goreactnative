@@ -12,6 +12,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Todo/>
         <Todo title="todo 1"/>
         <Todo title="todo 2"/>
         <Todo title="todo 3"/>
