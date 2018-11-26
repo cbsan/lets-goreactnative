@@ -3,21 +3,46 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 
 import Todo from './components/Todo';
 
+
+
 export default class App extends Component {
+
+  state = {
+    todos: [],
+  }
+
+  componentDidMount() {
+    const todos = [
+      'item 1',
+      'item 2',
+      'item 3',
+      'item 4',
+    ];
+
+    this.setState({todos})
+  }
+
+  addTodo = () => {
+    const { todos } = this.state;
+
+    this.setState({ todos: [
+      ...todos,
+      `item ${todos.length+1}`
+    ] });
+  }
+
   render() {
+    const { todos } = this.state;
     return (
       <View style={styles.container}>
-        <Todo/>
-        <Todo title="todo 1"/>
-        <Todo title="todo 2"/>
-        <Todo title="todo 3"/>
-        <Todo title="todo 4"/>
-        <Todo title="todo 5"/>
+      { todos.map(todo =>  <Todo key={Math.random()} title={todo}/> )}
+      <Button title="Add" onPress={this.addTodo}/>
       </View>
     );
   }
