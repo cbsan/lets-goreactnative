@@ -2,8 +2,10 @@ version: '2'
 
 services:
   app:
-    image: raivieiraadriano92/docker-react-native:with-emulator #imagem COM emulador android
-    #image: raivieiraadriano92/docker-react-native #imagem SEM emulador android
+    image: raivieiraadriano92/docker-react-native:with-emulator
+    ports:
+      - "9090:9090"
+      - "9091:8081"
     volumes:
       - .:/usr/src
       - ~/.gradle:/root/.gradle
@@ -13,4 +15,15 @@ services:
     privileged: true
     environment:
       NODE_ENV: development
+      DISPLAY: $DISPLAY
+    links:
+      - rctron
+
+  rctron:
+    image: cbsan/react
+    restart: always
+    tty: true
+    volumes:
+      - "/tmp/.X11-unix:/tmp/.X11-unix"
+    environment:
       DISPLAY: $DISPLAY

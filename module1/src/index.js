@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import"./config/ReactotronConfig";
+
 import {
   Platform,
   StyleSheet,
@@ -41,8 +43,12 @@ export default class App extends Component {
     const { todos } = this.state;
     return (
       <View style={styles.container}>
-      { todos.map(todo =>  <Todo key={Math.random()} title={todo}/> )}
-      <Button title="Add" onPress={this.addTodo}/>
+        <View style={styles.box}/>
+        <View style={styles.box}/>
+        <View style={styles.box}/>
+        <View style={styles.box}/>
+        <View style={styles.box}/>
+        <View style={styles.box}/>
       </View>
     );
   }
@@ -51,8 +57,20 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#333',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#f5f5f5',
   },
+
+  box: {
+    width: 80,
+    height: 80,
+    backgroundColor: '#F00',
+    margin: 10,
+    transform: [
+      { rotateZ : '20deg' },
+    ],
+  }
 });
