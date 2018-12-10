@@ -11,7 +11,7 @@ up:
 	$(DKC) up -d --remove-orphans --force-recreate
 
 bash:
-  $(DKC) exec app ash
+  $(DKC) exec app bash
 
 start:
 	$(DKC) exec app yarn start

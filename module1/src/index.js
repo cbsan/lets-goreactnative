@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
-import"./config/ReactotronConfig";
+import './config/ReactotronConfig';
 
 import {
-  Platform,
   StyleSheet,
-  Text,
   View,
-  Button
 } from 'react-native';
 
-import Todo from './components/Todo';
-
-
-
 export default class App extends Component {
-
   state = {
     todos: [],
   }
@@ -27,28 +19,29 @@ export default class App extends Component {
       'item 4',
     ];
 
-    this.setState({todos})
+    this.setState({ todos });
   }
 
   addTodo = () => {
     const { todos } = this.state;
 
-    this.setState({ todos: [
-      ...todos,
-      `item ${todos.length+1}`
-    ] });
+    this.setState({
+      todos: [
+        ...todos,
+        `item ${todos.length + 1}`,
+      ],
+    });
   }
 
   render() {
-    const { todos } = this.state;
     return (
       <View style={styles.container}>
-        <View style={styles.box}/>
-        <View style={styles.box}/>
-        <View style={styles.box}/>
-        <View style={styles.box}/>
-        <View style={styles.box}/>
-        <View style={styles.box}/>
+        <View style={styles.box} />
+        <View style={styles.box} />
+        <View style={styles.box} />
+        <View style={styles.box} />
+        <View style={styles.box} />
+        <View style={styles.box} />
       </View>
     );
   }
@@ -70,7 +63,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F00',
     margin: 10,
     transform: [
-      { rotateZ : '20deg' },
+      { rotateZ: '20deg' },
     ],
-  }
+  },
 });
