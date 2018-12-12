@@ -4,11 +4,11 @@ DKC=docker-compose
 
 all: up install
 
-install:
-	$(DKC) exec app yarn install
-
 up:
 	$(DKC) up -d --remove-orphans --force-recreate
+
+install:
+	$(DKC) exec app yarn install
 
 bash:
   $(DKC) exec app bash

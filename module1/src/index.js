@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './config/ReactotronConfig';
+import 'config/ReactotronConfig';
 
 import {
   StyleSheet,
