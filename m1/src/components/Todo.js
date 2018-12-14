@@ -1,14 +1,13 @@
-import React,{ Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   View,
   Text,
-  StyleSheet
 } from 'react-native';
 
 export default class Todo extends Component {
   static defaultProps = {
-    title:  'Default Title',
+    title: 'Default Title',
   }
 
   static propTypes = {
@@ -21,6 +20,6 @@ export default class Todo extends Component {
       <View>
         <Text>{title}</Text>
       </View>
-    )
+    );
   }
 }

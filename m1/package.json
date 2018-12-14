@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "react-devtools": "react-devtools",
     "test": "jest"
   },
   "dependencies": {
@@ -19,12 +21,14 @@
     "eslint": "^5.10.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-import-resolver-babel-module": "^4.0.0",
+    "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.0",
     "eslint-plugin-react-native": "^3.5.0",
     "jest": "23.6.0",
-    "metro-react-native-babel-preset": "0.49.2",
+    "metro-react-native-babel-preset": "^0.50.0",
+    "react-devtools": "^3.4.3",
     "react-test-renderer": "16.6.1"
   },
   "jest": {

@@ -1,25 +1,19 @@
 import React, { Component } from 'react';
-import 'config/ReactotronConfig';
+import '~/config/ReactotronConfig';
+import '~/config/DevToolsConfig';
 
 import {
   StyleSheet,
   View,
+  Text,
+  Platform,
 } from 'react-native';
+
+import Todo from './components/Todo';
 
 export default class App extends Component {
   state = {
     todos: [],
-  }
-
-  componentDidMount() {
-    const todos = [
-      'item 1',
-      'item 2',
-      'item 3',
-      'item 4',
-    ];
-
-    this.setState({ todos });
   }
 
   addTodo = () => {
@@ -36,12 +30,10 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
+        {Platform.OS === 'ios'
+          ? <Text>IOS</Text>
+          : <Text>Android</Text>
+        }
       </View>
     );
   }
@@ -50,7 +42,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#333',
+    backgroundColor: '#DDD',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
