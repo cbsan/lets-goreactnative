@@ -1,24 +1,35 @@
 #/bin/bash
 
-DKC=docker-compose
+DOCKER=docker-compose
+
+ifeq (,$(wildcard /.dockerenv))
+	DOCKER_EXEC=$(DOCKER) exec app
+endif
 
 all: up install
 
 up:
-	$(DKC) up -d --remove-orphans --force-recreate
+	$(DOCKER) up -d --remove-orphans --force-recreate
+
+down:
+	$(DOCKER) down
+
+ps:
+	$(DOCKER) ps
 
 install:
-	$(DKC) exec app yarn install
-
-bash:
-  $(DKC) exec app bash
+	$(DOCKER_EXEC) yarn install
 
 start:
-	$(DKC) exec app yarn start
+	$(DOCKER_EXEC) yarn start
 
-simulator-android:
-	$(DKC) exec app yarn run-android
+bash:
+	$(DOCKER_EXEC) ash
 
 reactotron:
 	xhost local:root
-	$(DKC) exec app Reactotron >> /dev/null 2>&1
+	$(DOCKER_EXEC) exec app Reactotron >> /dev/null 2>&1
+
+
+
+
