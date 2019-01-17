@@ -24,11 +24,11 @@ start:
 	$(DOCKER_EXEC) yarn start
 
 bash:
-	$(DOCKER_EXEC) ash
+	$(DOCKER_EXEC) bash
 
 reactotron:
 	xhost local:root
-	$(DOCKER_EXEC) exec app Reactotron >> /dev/null 2>&1
+	$(DOCKER_EXEC) exec rctron Reactotron >> /dev/null 2>&1
 
 
 
