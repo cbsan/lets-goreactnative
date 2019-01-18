@@ -1,8 +1,8 @@
-version: '2'
+version: "2"
 
 services:
   app:
-    image: raivieiraadriano92/docker-react-native:with-emulator
+    image: raivieiraadriano92/docker-react-native
     ports:
       - "9090:9090"
       - "8081:8081"

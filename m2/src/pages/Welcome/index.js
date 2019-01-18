@@ -6,7 +6,7 @@ import { View, Text } from 'react-native';
 
 const Welcome = () => (
   <View>
-    <Text>Welcome page</Text>
+    <Text>testando</Text>
   </View>
 );
 
