@@ -1,5 +1,7 @@
 import Reactotron from 'reactotron-react-native';
 
-Reactotron.configure({ host: 'rctron' })
+const tron = Reactotron.configure({ host: 'rctron' })
   .useReactNative()
   .connect();
+
+console.tron = tron;

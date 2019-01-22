@@ -35,6 +35,7 @@ export default class Welcome extends Component {
 
   render() {
     const { username } = this.state;
+
     return (
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
