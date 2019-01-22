@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import api from '~/services/api';
 
 import {
-  View, Text, TextInput, TouchableOpacity, StatusBar, AsycStorage,
+  View, Text, TextInput, TouchableOpacity, StatusBar, AsyncStorage,
 } from 'react-native';
 
 import styles from './styles';
@@ -19,17 +19,17 @@ export default class Welcome extends Component {
   };
 
   saveUser = async (username) => {
-    await AsycStorage.setItem('@Githuber:username', username);
+    await AsyncStorage.setItem('@Githuber:username', username);
   };
 
   signIn = async () => {
     const { username } = this.state;
-    console.tron.log(username);
+
     try {
-      // await this.checUserExists(username);
-      // await this.saveUser(username);
+      await this.checUserExists(username);
+      await this.saveUser(username);
     } catch (err) {
-      console.tron.log('ERror', err);
+      console.tron.error(err);
     }
   };
 
