@@ -28,7 +28,7 @@ bash:
 
 reactotron:
 	xhost local:root
-	$(DOCKER_EXEC) exec rctron Reactotron >> /dev/null 2>&1
+	$(DOCKER) exec rctron Reactotron >> /dev/null 2>&1
 
 
 

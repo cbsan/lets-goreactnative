@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 import { colors, metrics } from '~/styles';
-import { bold } from 'ansi-colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,16 +10,16 @@ const styles = StyleSheet.create({
     padding: metrics.basePadding * 2,
   },
 
+  form: {
+    marginTop: metrics.baseMargin * 2,
+  },
+
   text: {
     color: colors.light,
     fontSize: 15,
     lineHeight: 21,
     marginTop: metrics.baseMargin,
     textAlign: 'center',
-  },
-
-  form: {
-    marginTop: metrics.baseMargin * 2,
   },
 
   title: {
