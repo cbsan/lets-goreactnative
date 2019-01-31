@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import api from '~/services/api';
 
 import {
@@ -14,6 +15,12 @@ import {
 import styles from './styles';
 
 export default class Welcome extends Component {
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func,
+    }).isRequired,
+  };
+
   state = {
     username: '',
     loading: false,
@@ -32,13 +39,14 @@ export default class Welcome extends Component {
 
   signIn = async () => {
     const { username } = this.state;
-
+    const { navigation } = this.props;
     this.setState({ loading: true });
 
     try {
       await this.checUserExists(username);
       await this.saveUser(username);
       this.setState({ loading: false, error: false });
+      navigation.navigate('User');
     } catch (err) {
       this.setState({ loading: false, error: true });
       console.tron.error(err);

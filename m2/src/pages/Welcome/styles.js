@@ -2,6 +2,15 @@ import { StyleSheet } from 'react-native';
 import { colors, metrics } from '~/styles';
 
 const styles = StyleSheet.create({
+  button: {
+    alignItems: 'center',
+    backgroundColor: colors.primary,
+    borderRadius: metrics.baseRadius,
+    height: 44,
+    justifyContent: 'center',
+    marginTop: metrics.baseMargin,
+  },
+
   container: {
     alignItems: 'stretch',
     backgroundColor: colors.secondary,
@@ -20,6 +29,13 @@ const styles = StyleSheet.create({
     marginTop: metrics.baseMargin * 2,
   },
 
+  input: {
+    backgroundColor: colors.white,
+    borderRadius: metrics.baseRadius,
+    height: 44,
+    paddingHorizontal: metrics.basePadding,
+  },
+
   text: {
     color: colors.light,
     fontSize: 15,
@@ -33,22 +49,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-  },
-
-  input: {
-    backgroundColor: colors.white,
-    borderRadius: metrics.baseRadius,
-    height: 44,
-    paddingHorizontal: metrics.basePadding,
-  },
-
-  button: {
-    alignItems: 'center',
-    backgroundColor: colors.primary,
-    borderRadius: metrics.baseRadius,
-    height: 44,
-    justifyContent: 'center',
-    marginTop: metrics.baseMargin,
   },
 
   buttonText: {
