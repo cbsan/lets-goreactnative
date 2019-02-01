@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
     borderBottomColor: colors.light,
     borderBottomWidth: 1,
     flexDirection: 'row',
-    height: 54 + getStatusBarHeight(),
+    height: 54 + getStatusBarHeight(true),
     justifyContent: 'space-between',
     paddingHorizontal: metrics.basePadding,
-    paddingTop: getStatusBarHeight(),
+    paddingTop: getStatusBarHeight(true),
   },
   icon: {
     color: colors.darker,

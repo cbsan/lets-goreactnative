@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import { AsyncStorage } from 'react-native';
+
+import { AsyncStorage, StatusBar } from 'react-native';
 import '~/config/reactotron.config';
 import '~/config/dev-tools.config';
 
+import { colors } from '~/styles';
 import createNavigator from './routes';
 
+StatusBar.setBackgroundColor(colors.secondary);
 export default class App extends Component {
   state = {
     userChecked: false,

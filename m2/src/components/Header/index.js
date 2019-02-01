@@ -28,7 +28,7 @@ class Header extends Component {
     const { title } = this.props;
     return (
       <View style={styles.container}>
-        <StatusBar barStyle="light-content" />
+        <StatusBar backgroundColor={styles.primary} barStyle="light-content" />
         <View style={styles.left} />
         <Text style={styles.title}>{title}</Text>
         <TouchableOpacity onPress={this.signOut}>
