@@ -11,7 +11,7 @@ const RepositoryItem = ({ repository }) => (
     <View style={styles.infoContainer}>
       <View style={styles.info}>
         <Icon name="star" size={12} style={styles.infoIcon} />
-        <Text styles={styles.infoText}>{repository.stargazes_count}</Text>
+        <Text styles={styles.infoText}>{repository.stargazers_count}</Text>
       </View>
       <View style={styles.info}>
         <Icon name="code-fork" size={12} style={styles.infoIcon} />
